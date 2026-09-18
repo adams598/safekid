@@ -10,6 +10,7 @@ import { authRouter } from './routes/auth';
 import { childrenRouter } from './routes/children';
 import { zonesRouter } from './routes/zones';
 import { trackingRouter } from './routes/tracking';
+import { directionsRouter } from './routes/directions';
 import { setupSocketHandlers } from './socket';
 
 dotenv.config();
@@ -42,6 +43,7 @@ app.use('/api/auth', authRouter);
 app.use('/api/children', childrenRouter);
 app.use('/api/zones', zonesRouter);
 app.use('/api/tracking', trackingRouter);
+app.use('/api/directions', directionsRouter);
 
 app.get('/api/health', (_req, res) => {
   res.json({ status: 'ok', version: '1.0.0', timestamp: new Date().toISOString() });
