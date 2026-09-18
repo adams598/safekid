@@ -1,0 +1,66 @@
+{
+  "expo": {
+    "name": "SafeKid",
+    "slug": "safekid",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#5B6EF8"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.safekid.app",
+      "config": {
+        "googleMapsApiKey": "YOUR_GOOGLE_MAPS_IOS_KEY"
+      },
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "SafeKid utilise votre position pour vous guider vers votre enfant.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "SafeKid utilise votre position en arrière-plan pour surveiller les déplacements.",
+        "NSBluetoothAlwaysUsageDescription": "SafeKid utilise le Bluetooth pour connecter la puce GPS de votre enfant."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#5B6EF8"
+      },
+      "package": "com.safekid.app",
+      "config": {
+        "googleMaps": {
+          "apiKey": "YOUR_GOOGLE_MAPS_ANDROID_KEY"
+        }
+      },
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "BLUETOOTH",
+        "BLUETOOTH_SCAN",
+        "BLUETOOTH_CONNECT",
+        "RECEIVE_BOOT_COMPLETED",
+        "VIBRATE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "SafeKid utilise votre localisation pour surveiller les enfants."
+        }
+      ],
+      "expo-notifications"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "YOUR_EAS_PROJECT_ID"
+      }
+    }
+  }
+}
