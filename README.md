@@ -48,9 +48,10 @@ npm run dev
 ### Clés API à obtenir
 
 1. **Google Maps API Key** — [console.cloud.google.com](https://console.cloud.google.com)
-   - Activer Maps SDK for Android
-   - Activer Maps SDK for iOS
-   - Placer les clés dans `app/app.json`
+   - **Backend** : Créer une clé serveur avec "Directions API" activée
+     - Copier dans `backend/.env` → `GOOGLE_MAPS_API_KEY`
+   - **Frontend** : Créer des clés Android et iOS
+     - Mettre dans `app/app.json` → `expo.android.config.googleMaps.apiKey` et `expo.ios.config.googleMaps.apiKey`
 
 2. **EAS Build** (optionnel pour builds natifs)
    ```bash
@@ -58,6 +59,12 @@ npm run dev
    eas login
    eas build:configure
    ```
+
+### Notes de démarrage local
+
+- Le backend proxie l'API Google Maps — la clé serveur reste **sécurisée** sur le backend
+- L'app mobile utilise la clé publique Android/iOS pour afficher les cartes
+- Les itinéraires sont calculés par Google Directions API en temps réel (vraies distances, vrais temps)
 
 ## Technologies
 
